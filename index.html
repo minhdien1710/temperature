@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id ="oC" oninput="convert()">
+<p id="oF" >Do F:</p>
+<p id="oK" >Do K:</p>
+<script>
+    let Temp = function (c) {
+        this.c = c;
+        this.getF = function () {
+            return (c*1.8  + 32);
+        };
+        this.getK = function () {
+            return (c + 275);
+        };
+    };
+    function convert() {
+            let C = document.getElementById("oC").value;
+            let temp = new Temp(C);
+            let F = temp.getF();
+            let K = temp.getK();
+            document.getElementById("oF").innerHTML = "Do F: " + F;
+            document.getElementById("oK").innerText = "Do K: " + K;
+        }
+</script>
+
+</body>
+</html>
